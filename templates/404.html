@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+<div class="py-3 text-center">
+    <h2>OOPS!</h2>
+</div>
+<div class="py-3 text-center">
+    <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable</p>
+</div>
+<div style="text-align: center;" class="col-7 mx-auto">
+    <a href="{% url 'main' %}" role="button" class="btn btn-dark">GO TO HOMEPAGE</a>
+</div>
+
+{% endblock  %}

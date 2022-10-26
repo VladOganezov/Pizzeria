@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzeria</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css"
+        integrity="sha256-1NCiLO1eL8xsDn3wFHlM37FhxQjBruKz/veyTbWSWHk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://kit.fontawesome.com/cbbc2228ad.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light border-bottom box-shadow">
+      <a class="navbar-brand text-muted" href="{% url 'main' %}"><b>Pizzeria</b></a>
+      <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse"
+        data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'main' %}">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'orders' %}">ORDER</a>
+          </li>
+        </ul>
+
+        {% if user.is_authenticated %}
+          <a href="{% url 'cart' %}" role="button" class="btn font-weight-light text-muted">CART({{cart}})</a>
+          <span class="font-weight-light text-muted">Logged as {{user.email}}</span>
+          <a href="{% url 'logout'%}" role="button" class="btn font-weight-light text-muted"><i class="fa-solid fa-right-to-bracket"></i> LOGOUT</a>
+        {% else %}
+          <a href="{% url 'signup'%}" role="button" class="btn font-weight-light text-muted"><i class="fa-solid fa-user"></i> SIGN UP</a>
+          <a href="{% url 'signin'%}" role="button" class="btn font-weight-light text-muted"><i class="fa-solid fa-right-to-bracket"></i> LOG IN</a>
+        {% endif %}
+
+      </div>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock content %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"
+        integrity="sha256-Si/RSqVaI2Nt0NBCIADY5gtwKd6MVxsARUchEjnOoh4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit-icons.min.js"
+        integrity="sha256-xx24qw2IGUl97Dv7hUvw9UKnw2G7iVq+MmE4nkM/WJs=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/offcanvas.js' %}"></script>
+  <!-- Footer -->
+  <footer class="footer" style="border:15px solid white">
+    <div class="container">
+      <a href="tel:617-876-4897" role="button" class="btn btn-outline-light text-muted float-right">
+        <i class="fa-solid fa-phone"></i>
+      </a>
+      <a href="mailto:pizzeria@gmail.com" role="button" class="btn btn-outline-light text-muted float-right">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a href="https://twitter.com/Pizzeria" role="button" class="btn btn-outline-light text-muted float-right">
+        <i class="fa-brands fa-twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/pizzeria/" role="button" class="btn btn-outline-light text-muted float-right">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <p class="text-muted">
+        © 2022. All rights reserved by Pizzeria.
+      </p>
+    </div>
+  </footer>
+  <!-- Footer -->

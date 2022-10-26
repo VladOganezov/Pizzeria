@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-4 h-100" style="margin-top: 80px; width: 660px;">
+  <h2 class="text-center">E-mail Addresses</h2>
+  <p>
+  <p class="text-secondary">The following e-mail addresses are associated with your account:</p>
+  <form action="" method="post">
+    <table class="table table">
+      <thead>
+        <tr style="font-size: .875rem; font-weight: 400; color: #999; text-transform: uppercase;">
+          <td style="text-align:left">E-MAIL</td>
+          <td style="text-align:right">STATUS</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- {% for email in user_emails %} для отображения всех имейлов данного пользователя, с опциями измениния -->
+        <tr>
+          <td style="text-align:left">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                lapin.kirill45@gmail.com (Primary)
+                <!-- {{ email.user.email }} -->
+              </label>
+            </div>
+          </td>
+          <td style="text-align:right">Verified
+            <!-- {{ email.user.email.status }} -->
+          </td>
+        </tr>
+        <!-- {% endfor %} -->
+      </tbody>
+    </table>
+  </form>
+  <div class="d-flex flex-row justify-content-around" role="group" aria-label="Basic example">
+    <button type="submit" class="btn btn-primary btn-sm ">MAKE PRIMARY</button>
+    <button type="submit" class="btn btn-dark btn-sm">RE-SEND VERIFIKATION</button>
+    <button type="submit" class="btn btn-danger btn-sm">REMOVE</button>
+  </div>
+  <div class="container" style="width: auto; margin-top: 80px">
+    <h4 class="text-center" style="margin-top: 60px">Add E-mail Address</h4>
+    <form action="" method="post">
+      <div class="form-group">
+        <label for="exampleInputEmail1">E-Mail</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Enter E-Mail">
+        <p>
+      </div>
+      <button type="submit" class="btn btn-light btn-sm">ADD E-MAIL</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

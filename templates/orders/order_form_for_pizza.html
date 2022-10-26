@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <br>
+  <div class="py-3 text-center">
+    <h2>What's for lunch today?</h2>
+  </div>
+  
+  <div class="nav-scroller py-1 mb-1">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 text-muted" href="#">Pizza</a>
+      <a class="p-2 text-muted" href="#">Pasta</a>
+      <a class="p-2 text-muted" href="#">Salad</a>
+      <a class="p-2 text-muted" href="#">Drinks</a>
+      <a class="p-2 text-muted" href="#">Coctail</a>
+      <a class="p-2 text-muted" href="#">Garnier</a>
+      <a class="p-2 text-muted" href="#">Subs</a>
+      <hr>
+    </nav>
+    <hr>
+  </div>
+
+  <form method="POST" action="#">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="sel1">Select Size</label>
+      <select class="form-control" id="#">
+        <option>Choose your size</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="login">Select Pizza</label>
+      <select class="form-control" id="#">
+        <option>Choose your pizza</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="login">Toppings</label>
+      <br>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Anchovies
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Artichoke
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Barbecue Chicken
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Black Olives
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Buffalo Chicken
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Canadian Bacon
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Eggplant
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Fresh Garlic
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Green Peppers
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Ham
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Hamburger
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Mushrooms
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Onions
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Pepperoni
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Pineapple
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Sausage
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Spinach
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Tomato & Basil
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Zucchini
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="login">Quantity</label>
+      <input type="number" class="form-control" min=1 max="">
+    </div>
+    
+    <p class="text-right">
+      <button type="submit" class="btn btn-primary">Add to cart</button>
+    </p>
+  </form>
+
+</div>
+
+{% endblock  %}

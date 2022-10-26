@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+{% block content %}
+<center style="margin-top:20px; margin-bottom:20px;">
+	<h4>My Cart</h4>
+</center>
+<div class="container">
+	<div class="shadow p-3 mb-5 bg-body rounded">
+		<p>
+			<h5>Your Cart</h5>
+		</p>
+		<p>
+			<h6>July 22, 2022, 3.59 a.m.</h6>
+		</p>
+		<!--        <p><img src="https://thumbs.dreamstime.com/b/shop-cart-icon-buy-symbol-shopping-basket-sign-%C3%A2%E2%82%AC-stock-143519011.jpg" style="height: 120px; width:20%; display: block;" class="card-img-top" alt="..."></p>--><i class="fa fa-shopping-cart" style="font-size:48px;"></i>
+		<hr>
+		<p><b><h5>Deliver to</h5></b></p>
+			<!--        Text field for address-->
+			<form action="" method="post"> {% csrf_token %}
+				<div class="col-auto"> <input type="text" id="address" class="form-control"> </div>
+				<hr>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Item name</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Price</th>
+							<th scope="col">Remove</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for item in order.items.all %}
+						<tr>
+							<td>{{item.name}}</td>
+							<td>{{item.quantity}}</td>
+							<td>${{item.getItemTotal}}</td>
+							<td><a href="#"><i class="fa fa-trash-o" style="font-size:36px; color:red;"></i></a></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table> <b><h5>Total price: ${{order.getOrderTotal}}</h5></b>
+				<a href="#" type="button" class="btn btn-dark">Place Order</a> </div>
+			</form>
+</div>
+</div> 
+{% endblock %}

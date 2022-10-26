@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div style="width: 415px; margin-left: 435px;">
+        <form action="#" method="post">
+            <h1 style="margin-top: 70px;" class="text-center"> Add a new address </h1>
+            <div >
+                <button style="width: 415px; font-size: 15px; border-radius: 5px;" type="submit" class="button btn-primary"><svg width="24" height="24"   ><path d="M12 1a9.002 9.002 0 0 0-6.366 15.362c1.63 1.63 5.466 3.988 5.693 6.465.034.37.303.673.673.673.37 0 .64-.303.673-.673.227-2.477 4.06-4.831 5.689-6.46A9.002 9.002 0 0 0 12 1z" fill="#F43"></path><path d="M12 13.079a3.079 3.079 0 1 1 0-6.158 3.079 3.079 0 0 1 0 6.158z" fill="#fff"></path></svg>USE MY CURRENT LOCATION</button> 
+            </div><br>            
+            <hr style=" border-width: 3px; color:red; margin-top: 0px;">
+            <div>
+                <p style="margin-bottom: 0px;"><b>Pincode</b></p>
+                <input placeholder="Enter Pincode" class="input" type="tel" name="Pincode" value="" style="width: 415px; margin-bottom: 10px;border-radius: 5px; ">
+            </div>
+            <div>
+                <p style="margin-bottom: 0px;"><b>House No., Building name</b></p>
+                <input placeholder="Enter House No, Building Name" class="input" type="text" name="House" value="" style="width: 415px; margin-bottom: 10px; border-radius: 5px;">
+            </div>
+            <div>
+                <p style="margin-bottom: 0px;"><b>Road Name, Area, Colony</b></p>                
+                <input placeholder="Enter Road Name, Area, Colony" class="input" type="text" name="House" value="" style="width: 415px; margin-bottom: 10px; border-radius: 5px;">
+            </div> 
+            
+            <div>
+                <p style="margin-bottom: 0px;"><b>City</b></p>
+                <input class="fa-fa-search icon" placeholder="Enter City"   type="search"  name="search" value="" style="width: 415px; margin-bottom: 10px; border-radius: 5px;">
+            </div>
+            <div >
+                <p style="margin-bottom: 0px;"><b>State</b></p>
+                <select style="margin-bottom: 10px; border-radius: 5px; width: 415px;">
+                    <option value="Select state">Select state</option>
+                    <option value="Belarus">Belarus</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Poland">Poland</option>
+                </select>
+            </div>
+            <div>
+                <p style="margin-bottom: 0px;"><b>Landmark (Optional):</b></p>
+                <input placeholder="Enter Landmark"  type="text"  name="City" value="" style="width: 415px; margin-bottom: 10px; border-radius: 5px;">
+            </div>
+            <br>
+            <hr style=" border-width: 3px; color:red; margin-top: 0px;">
+            <div>
+                <p style="margin-bottom: 0px;"><b>Address Type:</b></p>
+                <div>
+                    <input type="radio" name="Home" value="">Home Address
+                </div>
+                <div>
+                    <input type="radio" name="Work" value="">Work/Office Address
+                </div>
+                <div>
+                    <input type="radio" name="Other" value="">Other
+                </div>
+            </div>
+            <div>
+                <button  type="submit" class="button btn-primary" style="width: 415px; border-radius: 5px; margin-top: 10px;">SAVE</button>           
+            </div>
+                       
+        </form> 
+    </div>
+</div>   
+
+{% endblock  %}
